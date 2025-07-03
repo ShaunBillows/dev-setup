@@ -1,6 +1,7 @@
 general {
     colors = true
     interval = 5
+    separator = ""
 }
 
 order += "volume master"
@@ -20,27 +21,33 @@ volume master {
 }
 
 wireless wlp0s20f3 {
-    format_up = "%essid %quality"
+    format_up = "🌐 %essid @%quality"
     format_down = ""
 }
 
 battery all {
-    format = "BAT %percentage %remaining"
+    format = "🔋 %percentage (%remaining h)"
     low_threshold = 20
+    threshold_type = "percentage"
 }
 
 cpu_usage {
-    format = "CPU %usage"
+    format = "💻 %usage"
     max_threshold = 75
 }
 
 cpu_temperature 0 {
-    format = "%degrees°C"
+    format = "🌡️  %degrees°C"
     max_threshold = 75
 }
 
 memory {
-    format = "MEM %percentage_used"
-    threshold_degraded = 80
+    format = "💾 %percentage_used"
+    threshold_critical = "2G"
 }
+
+tztime local {
+    format = "📅 %Y-%m-%d 🕐 %H:%M:%S"
+}
+
 
