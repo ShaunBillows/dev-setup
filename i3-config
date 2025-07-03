@@ -219,3 +219,6 @@ bindsym $mod+bracketright exec xrandr --output DP-1 --right-of eDP-1 --auto
 # Enable bluetooth
 exec --no-startup-id blueman-applet
 
+# Enable Brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
