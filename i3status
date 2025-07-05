@@ -36,8 +36,8 @@ memory {
 }
 
 wireless wlp0s20f3 {
-    format_up = "🌐 %essid @%quality"
-    format_down = "🌐 DOWN"
+    format_up = "🌐 %essid%quality"
+    format_down=""
     color_good = "#eceff4"
     color_degraded = "#d08770"
     color_bad = "#bf616a"
