@@ -5,11 +5,11 @@ general {
 }
 
 order += "volume master"
-order += "wireless wlp0s20f3"
-order += "battery all"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "memory"
+order += "wireless wlp0s20f3"
+order += "battery all"
 order += "tztime local"
 
 volume master {
@@ -20,30 +20,33 @@ volume master {
     mixer_idx = 0
 }
 
-wireless wlp0s20f3 {
-    format_up = "🌐 %essid @%quality"
-    format_down = ""
-}
-
-battery all {
-    format = "⚡ %percentage (%remaining h)"
-    low_threshold = 20
-    threshold_type = "percentage"
-}
-
 cpu_usage {
     format = "💻 %usage"
     max_threshold = 75
 }
 
 cpu_temperature 0 {
-    format = "🌡️%degrees°C"
+    format = "🌡️ %degrees°C"
     max_threshold = 75
 }
 
 memory {
     format = "💾 %percentage_used"
     threshold_critical = "2G"
+}
+
+wireless wlp0s20f3 {
+    format_up = "🌐 %essid @%quality"
+    format_down = "🌐 DOWN"
+    color_good = "#eceff4"
+    color_degraded = "#d08770"
+    color_bad = "#bf616a"
+}
+
+battery all {
+    format = "⚡ %percentage (%remaining h)"
+    low_threshold = 20
+    threshold_type = "percentage"
 }
 
 tztime local {
