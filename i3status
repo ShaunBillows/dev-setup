@@ -26,7 +26,7 @@ cpu_usage {
 }
 
 cpu_temperature 0 {
-    format = "🌡️ %degrees°C"
+    format = "🌡️%degrees°C"
     max_threshold = 75
 }
 
@@ -36,7 +36,7 @@ memory {
 }
 
 wireless wlp0s20f3 {
-    format_up = "🌐 %essid%quality"
+    format_up = "🌐%quality"
     format_down=""
     color_good = "#eceff4"
     color_degraded = "#d08770"
@@ -44,7 +44,7 @@ wireless wlp0s20f3 {
 }
 
 battery all {
-    format = "⚡ %percentage (%remaining h)"
+    format = "⚡ %percentage"
     low_threshold = 20
     threshold_type = "percentage"
 }
