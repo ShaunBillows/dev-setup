@@ -195,25 +195,25 @@ bindsym $mod+r mode "resize"
 #bar {
 #        status_command i3status
 #}
-bar {
-    status_command i3status -c ~/.config/i3status/config
-    tray_output primary
-    font pango:Ubuntu Mono 11
-
-    # Disable mouse wheel scroll
-    wheel_up_cmd nop
-    wheel_down_cmd nop
-
-    colors {
-        background #000000
-        statusline #eceff4
-        separator #4c566a
-        focused_workspace  #000000 #000000 #eceff4
-        active_workspace   #4c566a #4c566a #eceff4
-        inactive_workspace #000000 #000000 #616e88
-        urgent_workspace   #bf616a #bf616a #eceff4
-    }
-}
+#bar {
+#    status_command i3status -c ~/.config/i3status/config
+#    tray_output primary
+#    font pango:Ubuntu Mono 11
+#
+#    # Disable mouse wheel scroll
+#    wheel_up_cmd nop
+#    wheel_down_cmd nop
+#
+#    colors {
+#        background #000000
+#        statusline #eceff4
+#        separator #4c566a
+#        focused_workspace  #000000 #000000 #eceff4
+#        active_workspace   #4c566a #4c566a #eceff4
+#        inactive_workspace #000000 #000000 #616e88
+#        urgent_workspace   #bf616a #bf616a #eceff4
+#    }
+#}
 
 # CUSTOM OVERRIDES
 
@@ -229,9 +229,20 @@ bindsym Print exec flameshot gui
 bindsym $mod+Shift+n exec env WAYLAND_DISPLAY= gammastep -O 3000
 bindsym $mod+Shift+m exec env WAYLAND_DISPLAY= gammastep -x
 
-# Enable multiple monitors
+# Enable multiple monitors via USBC port
 bindsym $mod+bracketleft exec xrandr --output DP-1 --left-of eDP-1 --auto
 bindsym $mod+bracketright exec xrandr --output DP-1 --right-of eDP-1 --auto
+
+# Enable multiple monitors via HDMI port
+bindsym $mod+Shift+bracketleft exec xrandr --output HDMI-1 --left-of eDP-1 --auto
+bindsym $mod+Shift+bracketright exec xrandr --output HDMI-1 --right-of eDP-1 --auto
+
+# Turn off external monitors
+bindsym $mod+Shift+BackSpace exec xrandr --output HDMI-1 --off --output DP-1 --off
+
+# Move workspace between monitors
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
 
 # Enable bluetooth
 exec --no-startup-id blueman-applet
@@ -248,3 +259,6 @@ client.focused          #000000 #000000 #eceff4 #000000
 client.focused_inactive #000000 #000000 #888888 #000000
 client.unfocused        #000000 #000000 #888888 #000000
 client.urgent           #bf616a #bf616a #eceff4 #bf616a
+
+# Enable polybar status bar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

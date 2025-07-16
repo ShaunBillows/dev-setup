@@ -25,3 +25,11 @@ sudo apt install feh compton fonts-font-awesome
 - installed cheese to use camera. Type 'cheese' on command line
 - Enabled brightness controls: installed brightnessctl, updated config enabling brightness keys and added current user to the video group
 
+### Poly Bar
+
+- sudo apt install polybar
+- create config file at ~/.config/polybar/config.ini
+- created a launch script at ~/.config/polybar/launch.sh
+- made this script executable
+- updated i3 config to launch the status bar, removed default status bar
+
