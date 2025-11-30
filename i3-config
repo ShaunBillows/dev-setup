@@ -252,13 +252,17 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 # Enable thin borders
-for_window [class=".*"] border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 
-# Enable minimal window colour styling
-client.focused          #000000 #000000 #eceff4 #000000
+# Enable minimal window colour styling - subtle gray border on focused window
+client.focused          #404040 #404040 #eceff4 #404040
 client.focused_inactive #000000 #000000 #888888 #000000
 client.unfocused        #000000 #000000 #888888 #000000
 client.urgent           #bf616a #bf616a #eceff4 #bf616a
+
+# Disable window borders when only one window
+smart_borders on
 
 # Enable polybar status bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
