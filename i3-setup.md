@@ -11,6 +11,9 @@ sudo apt install i3 i3status i3lock dmenu
 # Install recommended extras (optional but helpful)
 sudo apt install feh compton fonts-font-awesome
 
+# Install audio and notification utilities
+sudo apt install pulseaudio-utils libnotify-bin
+
 ## Configuration:
 
 - Created i3 config file
@@ -24,6 +27,7 @@ sudo apt install feh compton fonts-font-awesome
 - enabled bluetooth: installed blueman and updated config to  enable bluetooth and added gui toggle to status bar
 - installed cheese to use camera. Type 'cheese' on command line
 - Enabled brightness controls: installed brightnessctl, updated config enabling brightness keys and added current user to the video group
+- Created audio output switcher: created ~/.config/i3/scripts/audio-switch.sh script for switching between audio devices (speakers/bluetooth), made executable, added keybinding (mod + shift + a)
 
 ### Poly Bar
 

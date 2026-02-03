@@ -266,3 +266,7 @@ smart_borders on
 
 # Enable polybar status bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Switch audio output devices (shows menu)
+bindsym $mod+Shift+a exec ~/.config/i3/scripts/audio-switch.sh
+
