@@ -1,0 +1,2 @@
+" Allow copilot next word command
+sethandler <C-Right> i:ide
